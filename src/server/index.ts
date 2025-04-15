@@ -4,7 +4,7 @@ import path from "path";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const clientBuildPath = path.join(__dirname, "../../../../client-build");
+const clientBuildPath = path.join(__dirname, "../../../client-build");
 
 app.use(express.static(clientBuildPath));
 

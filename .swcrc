@@ -1,16 +1,12 @@
 {
-  "$schema": "https://json.schemastore.org/swcrc",
   "jsc": {
     "parser": {
-      "syntax": "typescript",
-      "decorators": false,
-      "dynamicImport": false
+      "syntax": "typescript"
     },
     "target": "es2020"
   },
   "module": {
     "type": "commonjs"
   },
-  "minify": false,
   "sourceMaps": true
 }
