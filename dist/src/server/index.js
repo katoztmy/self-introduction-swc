@@ -11,6 +11,7 @@ function _interop_require_default(obj) {
 }
 const app = (0, _express.default)();
 const PORT = process.env.PORT || 3000;
+console.log(__dirname);
 const clientBuildPath = _path.default.join(__dirname, "../../../client-build");
 app.use(_express.default.static(clientBuildPath));
 app.get("/self-introduction", (_req, res)=>{

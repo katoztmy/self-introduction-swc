@@ -4,16 +4,12 @@ import path from "path";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-const clientBuildPath = path.join(__dirname, "../../../client-build");
+const buildPath = path.join(__dirname, "../../../client-build");
 
-app.use(express.static(clientBuildPath));
-
-app.get("/self-introduction", (_req, res) => {
-  res.sendFile(path.join(clientBuildPath, "self-introduction/index.html"));
-});
+app.use(express.static(buildPath));
 
 app.get("/", (_req, res) => {
-  res.redirect("/self-introduction/");
+  res.sendFile(path.join(buildPath, "self-introduction/index.html"));
 });
 
 app.listen(PORT, () => {
