@@ -10,15 +10,11 @@ function _interop_require_default(obj) {
     };
 }
 const app = (0, _express.default)();
-const PORT = process.env.PORT || 3000;
-console.log(__dirname);
-const clientBuildPath = _path.default.join(__dirname, "../../../client-build");
-app.use(_express.default.static(clientBuildPath));
-app.get("/self-introduction", (_req, res)=>{
-    res.sendFile(_path.default.join(clientBuildPath, "self-introduction/index.html"));
-});
+const PORT = 3000;
+const buildPath = _path.default.join(__dirname, "../../../client-build");
+app.use(_express.default.static(buildPath));
 app.get("/", (_req, res)=>{
-    res.redirect("/self-introduction/");
+    res.sendFile(_path.default.join(buildPath, "self-introduction/index.html"));
 });
 app.listen(PORT, ()=>{
     console.log(`Server is running on port ${PORT}`);
