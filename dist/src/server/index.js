@@ -17,7 +17,7 @@ app.get("/", (_req, res)=>{
     res.sendFile(_path.default.join(buildPath, "self-introduction/index.html"));
 });
 app.listen(PORT, ()=>{
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on ports ${PORT}`);
 });
 
 //# sourceMappingURL=index.js.map

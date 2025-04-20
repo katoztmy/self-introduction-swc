@@ -1,6 +1,6 @@
 {
-  "watch": ["dist/src/server"],
-  "ext": "js",
+  "watch": ["src/server"],
+  "ext": "ts",
   "ignore": ["node_modules"],
-  "exec": "node dist/src/server/index.js"
+  "exec": "npm run build:server && node dist/src/server/index.js"
 }
