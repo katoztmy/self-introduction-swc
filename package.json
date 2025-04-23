@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build:client": "swc src/client -d dist",
     "build:server": "swc src/server -d dist",
-    "build": "npm run build:server",
+    "build": "npm run build:server && npm run build:client",
     "dev:server": "swc src/server -d dist --watch",
     "dev": "nodemon"
   },
@@ -15,13 +16,15 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.1.0",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "react-dom": "^19.1.0"
   },
   "devDependencies": {
     "@swc/cli": "^0.6.0",
     "@swc/core": "^1.11.21",
     "@types/express": "^5.0.1",
     "@types/node": "^22.14.1",
+    "@types/react-dom": "^19.1.2",
     "typescript": "^5.8.3"
   }
 }
