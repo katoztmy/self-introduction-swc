@@ -16,8 +16,8 @@ function _interop_require_default(obj) {
 }
 const App = ()=>{
     return /*#__PURE__*/ _react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/ _react.default.createElement("h1", null, "Hello, world!"), /*#__PURE__*/ _react.default.createElement("p", null, "This is a simple React app."), /*#__PURE__*/ _react.default.createElement("p", null, "It is rendered on the client side."), /*#__PURE__*/ _react.default.createElement("p", null, "Enjoy coding!"), /*#__PURE__*/ _react.default.createElement("button", {
-        onClick: ()=>alert("aho")
-    }, "onClick時に関数が仕込んであるがHydrationをさせていないので発火しない"));
+        onClick: ()=>alert("HelloWorld!")
+    }, "アラート発火"));
 };
 
 //# sourceMappingURL=index.js.map

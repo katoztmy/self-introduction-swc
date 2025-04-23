@@ -7,9 +7,7 @@ export const App = () => {
       <p>This is a simple React app.</p>
       <p>It is rendered on the client side.</p>
       <p>Enjoy coding!</p>
-      <button onClick={() => alert("aho")}>
-        onClick時に関数が仕込んであるがHydrationをさせていないので発火しない
-      </button>
+      <button onClick={() => alert("HelloWorld!")}>アラート発火</button>
     </>
   );
 };
