@@ -1,12 +1,19 @@
 {
   "jsc": {
     "parser": {
-      "syntax": "typescript"
+      "syntax": "typescript",
+      "tsx": true
+    },
+    "transform": {
+      "react": {
+        "runtime": "automatic"
+      }
     },
     "target": "es2020"
   },
   "module": {
-    "type": "commonjs"
+    "type": "es6",
+    "importInterop": "node"
   },
   "sourceMaps": true
 }

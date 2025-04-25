@@ -1,13 +1,13 @@
 import express from "express";
-import path from "path";
 import { renderToString } from "react-dom/server";
-import { App } from "../client";
+import { App } from "../client/index.js";
 import React from "react";
 
 const app = express();
 const PORT = 3000;
 
-app.use(express.static(path.join(__dirname, "../../../src/client")));
+// ここはdist/src/serverっていうdirnameと../../src/clientを連結している、つまりdist/src/client/を指している
+app.use(express.static("dist/src/client"));
 
 app.get("/", (_req, res) => {
   const appHtml = renderToString(<App />);
@@ -17,11 +17,12 @@ app.get("/", (_req, res) => {
       <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="/index.css">
         <title>SSR with React</title>
       </head>
       <body>
-        <div id="app">${appHtml}</div>
+        <div id="root">${appHtml}</div>
+        <script type="module" src="app.js"></script>
       </body>
     </html>
   `;

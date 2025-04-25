@@ -3,17 +3,26 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "build:client": "swc src/client -d dist",
+    "copy-assets": "cp -r src/client/*.css dist/src/client/",
+    "build:client": "swc src/client -d dist && npm run copy-assets",
     "build:server": "swc src/server -d dist",
     "build": "npm run build:server && npm run build:client",
     "dev:server": "swc src/server -d dist --watch",
     "dev": "nodemon"
   },
+  "scripts": {
+  "copy-assets": "cp -r src/client/*.css dist/src/client/",
+  "build:client": "esbuild src/client/app.tsx --bundle --format=esm --outfile=dist/src/client/app.js",
+  "build:server": "swc src/server -d dist/src/server",
+  "build": "npm run build:server && npm run build:client && npm run copy-assets",
+  "dev:server": "swc src/server -d dist/src/server --watch",
+  "dev": "nodemon"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "express": "^5.1.0",
     "nodemon": "^3.1.9",
@@ -21,10 +30,13 @@
   },
   "devDependencies": {
     "@swc/cli": "^0.6.0",
-    "@swc/core": "^1.11.21",
+    "@swc/core": "^1.11.22",
+    "@swc/plugin-transform-imports": "^7.0.3",
     "@types/express": "^5.0.1",
     "@types/node": "^22.14.1",
     "@types/react-dom": "^19.1.2",
+    "esbuild": "^0.25.3",
+    "swc-loader": "^0.2.6",
     "typescript": "^5.8.3"
   }
 }
