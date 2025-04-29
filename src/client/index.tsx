@@ -1,16 +1,15 @@
 import React, { useState } from "react";
+import { Link, Route, Routes } from "react-router-dom";
+import { About } from "./About";
+import { Home } from "./Home";
 
 export const App = () => {
-  const [count, setCount] = useState(0);
   return (
     <>
-      <h1>Hello, world!</h1>
-      <button onClick={() => alert("HelloWorld!")}>アラート発火</button>
-      <button onClick={() => setCount((prev) => prev + 1)}>
-        カウントアップ
-      </button>
-      <br />
-      {count}
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
     </>
   );
 };

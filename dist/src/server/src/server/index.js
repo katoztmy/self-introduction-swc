@@ -3,11 +3,15 @@ import express from "express";
 import { renderToString } from "react-dom/server";
 import { App } from "../client/index.js";
 import React from "react";
+import { StaticRouter } from "react-router-dom";
 const app = express();
 const PORT = 3000;
 app.use(express.static("dist/src/client"));
 app.get("/", (_req, res)=>{
-    const appHtml = renderToString(/*#__PURE__*/ _jsx(App, {}));
+    const appHtml = renderToString(/*#__PURE__*/ _jsx(StaticRouter, {
+        location: location,
+        children: /*#__PURE__*/ _jsx(App, {})
+    }));
     const html = `
     <!DOCTYPE html>
     <html lang="en">
