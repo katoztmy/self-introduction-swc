@@ -5,7 +5,6 @@ import { App } from "../client/index.js";
 import React from "react";
 const app = express();
 const PORT = 3000;
-// ここはdist/src/serverっていうdirnameと../../src/clientを連結している、つまりdist/src/client/を指している
 app.use(express.static("dist/src/client"));
 app.get("/", (_req, res)=>{
     const appHtml = renderToString(/*#__PURE__*/ _jsx(App, {}));
