@@ -7,7 +7,7 @@
   "scripts": {
     "copy-assets": "cp -r src/client/*.css dist/src/client/",
     "build:client": "esbuild src/client/app.tsx --bundle --format=esm --outfile=dist/src/client/app.js",
-    "build:server": "swc src/server -d dist/src/server",
+    "build:server": "swc src/ -d dist",
     "build": "npm run build:server && npm run build:client && npm run copy-assets",
     "dev:server": "swc src/server -d dist/src/server --watch",
     "dev": "nodemon"

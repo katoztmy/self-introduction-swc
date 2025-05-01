@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link, Route, Routes } from "react-router-dom";
-import { About } from "./About";
-import { Home } from "./Home";
+import { Route, Routes } from "react-router-dom";
+import { About } from "./About.js";
+import { Home } from "./Home.js";
 
 export const App = () => {
   return (

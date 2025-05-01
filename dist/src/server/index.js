@@ -3,12 +3,37 @@ import express from "express";
 import { renderToString } from "react-dom/server";
 import { App } from "../client/index.js";
 import React from "react";
+import { StaticRouter } from "react-router-dom/server.js";
 const app = express();
 const PORT = 3000;
-// ここはdist/src/serverっていうdirnameと../../src/clientを連結している、つまりdist/src/client/を指している
 app.use(express.static("dist/src/client"));
-app.get("/", (_req, res)=>{
-    const appHtml = renderToString(/*#__PURE__*/ _jsx(App, {}));
+app.get("/", (req, res)=>{
+    const appHtml = renderToString(/*#__PURE__*/ _jsx(StaticRouter, {
+        location: req.url,
+        children: /*#__PURE__*/ _jsx(App, {})
+    }));
+    const html = `
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/index.css">
+        <title>SSR with React</title>
+      </head>
+      <body>
+        <div id="root">${appHtml}</div>
+        <script type="module" src="app.js"></script>
+      </body>
+    </html>
+  `;
+    res.send(html);
+});
+app.get("/about", (req, res)=>{
+    const appHtml = renderToString(/*#__PURE__*/ _jsx(StaticRouter, {
+        location: req.url,
+        children: /*#__PURE__*/ _jsx(App, {})
+    }));
     const html = `
     <!DOCTYPE html>
     <html lang="en">
