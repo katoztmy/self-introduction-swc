@@ -2433,7 +2433,7 @@ var require_react_dom_development = __commonJS({
         var HostPortal = 4;
         var HostComponent = 5;
         var HostText = 6;
-        var Fragment6 = 7;
+        var Fragment7 = 7;
         var Mode = 8;
         var ContextConsumer = 9;
         var ContextProvider = 10;
@@ -3590,7 +3590,7 @@ var require_react_dom_development = __commonJS({
               return "DehydratedFragment";
             case ForwardRef:
               return getWrappedName$1(type, type.render, "ForwardRef");
-            case Fragment6:
+            case Fragment7:
               return "Fragment";
             case HostComponent:
               return type;
@@ -12019,7 +12019,7 @@ var require_react_dom_development = __commonJS({
             }
           }
           function updateFragment2(returnFiber, current2, fragment, lanes, key) {
-            if (current2 === null || current2.tag !== Fragment6) {
+            if (current2 === null || current2.tag !== Fragment7) {
               var created = createFiberFromFragment(fragment, returnFiber.mode, lanes, key);
               created.return = returnFiber;
               return created;
@@ -12422,7 +12422,7 @@ var require_react_dom_development = __commonJS({
               if (child.key === key) {
                 var elementType = element.type;
                 if (elementType === REACT_FRAGMENT_TYPE) {
-                  if (child.tag === Fragment6) {
+                  if (child.tag === Fragment7) {
                     deleteRemainingChildren(returnFiber, child.sibling);
                     var existing = useFiber(child, element.props.children);
                     existing.return = returnFiber;
@@ -17898,7 +17898,7 @@ var require_react_dom_development = __commonJS({
               var _resolvedProps2 = workInProgress2.elementType === type ? _unresolvedProps2 : resolveDefaultProps(type, _unresolvedProps2);
               return updateForwardRef(current2, workInProgress2, type, _resolvedProps2, renderLanes2);
             }
-            case Fragment6:
+            case Fragment7:
               return updateFragment(current2, workInProgress2, renderLanes2);
             case Mode:
               return updateMode(current2, workInProgress2, renderLanes2);
@@ -18170,7 +18170,7 @@ var require_react_dom_development = __commonJS({
             case SimpleMemoComponent:
             case FunctionComponent:
             case ForwardRef:
-            case Fragment6:
+            case Fragment7:
             case Mode:
             case Profiler:
             case ContextConsumer:
@@ -22431,7 +22431,7 @@ var require_react_dom_development = __commonJS({
           return fiber;
         }
         function createFiberFromFragment(elements, mode, lanes, key) {
-          var fiber = createFiber(Fragment6, elements, key, mode);
+          var fiber = createFiber(Fragment7, elements, key, mode);
           fiber.lanes = lanes;
           return fiber;
         }
@@ -24463,11 +24463,11 @@ var require_react_jsx_runtime_development = __commonJS({
             return jsxWithValidation(type, props, key, false);
           }
         }
-        var jsx5 = jsxWithValidationDynamic;
-        var jsxs4 = jsxWithValidationStatic;
+        var jsx8 = jsxWithValidationDynamic;
+        var jsxs7 = jsxWithValidationStatic;
         exports.Fragment = REACT_FRAGMENT_TYPE;
-        exports.jsx = jsx5;
-        exports.jsxs = jsxs4;
+        exports.jsx = jsx8;
+        exports.jsxs = jsxs7;
       })();
     }
   }
@@ -26475,27 +26475,55 @@ var Home = () => {
     /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h1", { children: count }),
     /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { onClick: countUp, children: "\u30AB\u30A6\u30F3\u30C8\u30A2\u30C3\u30D7" }),
     /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h1", { children: "Home\u30DA\u30FC\u30B8" }),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { children: "\u3053\u306E\u30A2\u30D7\u30EA\u306FReact\u306E\u30B5\u30F3\u30D7\u30EB\u3067\u3059\u3002" }),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { children: "React\u306E\u57FA\u672C\u7684\u306A\u4F7F\u3044\u65B9\u3092\u5B66\u3076\u305F\u3081\u306E\u3082\u306E\u3067\u3059\u3002" }),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Link, { to: "/about", children: "\u30A2\u30D0\u30A6\u30C8\u30DA\u30FC\u30B8\u3078\u9077\u79FB\u3059\u308B" })
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("p", { children: "\u3053\u306E\u30A2\u30D7\u30EA\u306FReact\u306E\u30B5\u30F3\u30D7\u30EB\u3067\u3059\u3002" })
+  ] });
+};
+
+// src/client/Detail.tsx
+var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
+var Detail = () => {
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h1", { children: "Detail\u30DA\u30FC\u30B8" }) });
+};
+
+// src/client/NotFound.tsx
+var import_jsx_runtime4 = __toESM(require_jsx_runtime(), 1);
+var NotFound = () => {
+  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h1", { children: "404 - Not Found" }),
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { children: "The page you are looking for does not exist." })
   ] });
 };
 
 // src/client/index.tsx
-var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime5 = __toESM(require_jsx_runtime(), 1);
 var App = () => {
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_jsx_runtime3.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(Routes, { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Route, { path: "/about", element: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(About, {}) }),
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Route, { path: "/", element: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Home, {}) })
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_jsx_runtime5.Fragment, { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(Routes, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Route, { path: "/about", element: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(About, {}) }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Route, { path: "/", element: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Home, {}) }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Route, { path: "/detail", element: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Detail, {}) }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Route, { path: "*", element: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(NotFound, {}) })
+  ] }) });
+};
+
+// src/client/Navigation.tsx
+var import_jsx_runtime6 = __toESM(require_jsx_runtime(), 1);
+var Navigation = () => {
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("nav", { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("ul", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Link, { to: "/", children: "Home" }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Link, { to: "/about", children: "About" }) }),
+    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Link, { to: "/detail", children: "Detail" }) })
   ] }) });
 };
 
 // src/client/app.tsx
-var import_jsx_runtime4 = __toESM(require_jsx_runtime(), 1);
+var import_jsx_runtime7 = __toESM(require_jsx_runtime(), 1);
 var rootEelement = document.getElementById("root");
 (0, import_client.hydrateRoot)(
   rootEelement,
-  /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_react2.default.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(BrowserRouter, { children: /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(App, {}) }) })
+  /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_react2.default.StrictMode, { children: /* @__PURE__ */ (0, import_jsx_runtime7.jsxs)(BrowserRouter, { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(Navigation, {}),
+    /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(App, {})
+  ] }) })
 );
 /*! Bundled license information:
 

@@ -12,8 +12,6 @@ export const Home = () => {
       <button onClick={countUp}>カウントアップ</button>
       <h1>Homeページ</h1>
       <p>このアプリはReactのサンプルです。</p>
-      <p>Reactの基本的な使い方を学ぶためのものです。</p>
-      <Link to="/about">アバウトページへ遷移する</Link>
     </>
   );
 };
